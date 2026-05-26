@@ -1,1 +1,0 @@
-string numString = Console.ReadLine();

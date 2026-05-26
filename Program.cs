@@ -9,6 +9,7 @@ b=a;
 Console.WriteLine("Valor de a:" + a);
 Console.WriteLine("Valor de b:" + b);
 
+Console.WriteLine("Ingrese un numero a invertir:");
 string numString = Console.ReadLine();
 
 int num,invertido=0;
@@ -32,17 +33,13 @@ if(int.TryParse(numString, out num))
     
 }
 
-string cadenaIngresada=Console.ReadLine();
-
-Console.WriteLine("La longitud de la cadena ingresada es de " + cadenaIngresada.Length + " caracteres");
-
 //CALCULADORA V1
 
 bool realizar = true;
 
 do
 {   
-    Console.WriteLine("Ingrese una operacion a realizar:");
+    Console.WriteLine("\nIngrese una operacion a realizar:");
 
     Console.WriteLine("S: SUMAR");
     Console.WriteLine("R: RESTAR");
@@ -106,11 +103,11 @@ do
                     break;
                 case "MAX":
                     resultado = Math.Max(num1,num2);
-                    operador ="Maximo de los dos";
+                    operador ="Maxima de los dos";
                     break;
                 case "MIN":
                     resultado = Math.Min(num1,num2);
-                    operador ="Minimo de los dos";
+                    operador ="Minima de los dos";
                     break;
                 case "ABS":
                     resultado = Math.Abs(num1);
@@ -141,13 +138,18 @@ do
                     Console.WriteLine("La operacion que busca no existe en esta calculadora");
                     break;
             }
+            
+            num1.ToString();
+            num2.ToString();
+            resultado.ToString();
+
         if (operacionTipo == "Binaria")
         {
-            Console.WriteLine("Resultado de la " + operador + " es : " + resultado);
+        Console.WriteLine("Resultado de la " + operador + $" entre {num1} y {num2} es : " + resultado);
         }
         else
         {
-            Console.WriteLine("Resultado del " + operador + " es : " + resultado);
+            Console.WriteLine("Resultado del " + operador + $" de {num1} es : " + resultado);
         }
         
     }
@@ -163,6 +165,67 @@ do
         realizar = false;
     }
 }while(realizar);
+
+Console.WriteLine("Ingrese una cadena");
+
+string cadenaIngresada=Console.ReadLine();
+
+Console.WriteLine("La longitud de la cadena ingresada es de " + cadenaIngresada.Length + " caracteres");
+
+Console.WriteLine("Ingrese una segunda cadena");
+
+string cadenaIngresada2=Console.ReadLine();
+
+Console.WriteLine("Las 2 cadenas concatenadas son "+ string.Concat(cadenaIngresada,cadenaIngresada2));
+
+Console.WriteLine("Subcadena (primeros 2 caracteres) de la cadena ingresada: " + cadenaIngresada.Substring(0,2));
+
+Console.WriteLine("Cadena mostrada mediante un bucle for \n");
+
+foreach(char caracter in cadenaIngresada)
+{
+    Console.Write(caracter);
+}
+
+if (cadenaIngresada.Contains("ola"))
+{
+    Console.WriteLine("\nLa cadena contiene la palabra 'ola'");
+}
+else
+{
+    Console.WriteLine("\nLa cadena no contiene la palabra buscada");
+}
+
+Console.WriteLine("Cadena pasada a todo mayusculas: " + cadenaIngresada.ToUpper());
+
+Console.WriteLine("Cadena pasada a todo minusculas: " + cadenaIngresada.ToLower());
+
+string[] cadenaSeparada = cadenaIngresada.Split(',');
+
+foreach(string palabra in cadenaSeparada)
+{
+    Console.WriteLine(palabra);
+}
+
+Console.WriteLine("\nIngrese 2 numeros en formato string para que se sumen entre si");
+
+string sumaString = Console.ReadLine();
+
+string[] arregloNumeros = sumaString.Split('+');
+
+int suma=0;
+
+for(int i = 0; i < arregloNumeros.Length; i++)
+{   
+    int.TryParse(arregloNumeros[i], out int numero);
+    suma +=numero;
+}
+
+Console.WriteLine("La suma de los numeros es: " + suma);
+
+
+
+
 
 
 
