@@ -30,4 +30,7 @@ if(int.TryParse(numString, out num))
     
 }
 
+string cadenaIngresada=Console.ReadLine();
+
+Console.WriteLine("La longitud de la cadena ingresada es de " + cadenaIngresada.Length + " caracteres");
 
