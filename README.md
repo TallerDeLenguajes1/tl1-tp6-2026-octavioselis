@@ -12,5 +12,3 @@
 ### 3) ¿Qué sucede cuando se utiliza el carácter @ y $ antes de una cadena de texto?
   El @ le dice al compilador que ignore todas las secuencias de escape dentro de la cadena.
   El $ te permite incrustar variables o expresiones de C# directamente adentro de la cadena de texto usando llaves { }.
-
-hazme todo esto en formato readme
